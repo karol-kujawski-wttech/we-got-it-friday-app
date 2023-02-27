@@ -2,8 +2,6 @@
   "name": "friday-app",
   "version": "0.0.0",
   "scripts": {
-    "percy:int": "npx percy exec -- cypress run --config-file cypress/config/int.ts",
-    "percy:prod": "npx percy exec -- cypress run --config-file cypress/config/prod.ts"
   },
   "devDependencies": {
     "@percy/cli": "^1.20.0",
