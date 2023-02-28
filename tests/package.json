@@ -2,6 +2,9 @@
   "name": "friday-app",
   "version": "0.0.0",
   "scripts": {
+    "percy:local": "npx percy exec -- cypress run --config-file cypress/config/local.ts --browser chrome",
+    "percy:int": "npx percy exec -- cypress run --config-file cypress/config/int.ts --browser chrome",
+    "percy:prod": "npx percy exec -- cypress run --config-file cypress/config/prod.ts --browser chrome"
   },
   "devDependencies": {
     "@percy/cli": "^1.20.0",

@@ -37,13 +37,13 @@ describe('Friday App', () => {
 describe('Friday App API', () => {
 
   it('returns 200 for isFriday', () => {
-    cy.request('GET', `https://ry0wsrn99d.execute-api.eu-central-1.amazonaws.com/isFriday/1674754910507`).then((response) => {
+    cy.request('GET', `${Cypress.env('apiUrl')}/isFriday/1674754910507`).then((response) => {
       expect(response.status).eq(200);
     })
   })
 
   it('returns 200 for minutesToFriday', () => {
-    cy.request('GET', `https://ry0wsrn99d.execute-api.eu-central-1.amazonaws.com/minutesToFriday/1674754910507`).then((response) => {
+    cy.request('GET', `${Cypress.env('apiUrl')}/minutesToFriday/1674754910507`).then((response) => {
       expect(response.status).eq(200);
     })
   })
