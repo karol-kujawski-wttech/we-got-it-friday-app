@@ -7,7 +7,7 @@ describe('Friday App', () => {
     })
       .visit('/')
       .get('#isFriday')
-      .should('have.text', 'Piątek? To nie dzisiaj :( !!')
+      .should('have.text', 'Piątek? To nie dzisiaj :(')
       .percySnapshot();
   });
 
