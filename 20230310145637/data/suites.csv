@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Mar 10 12:56:34 GMT 2023","Fri Mar 10 12:56:34 GMT 2023","218","","Friday App","","","","displays an info that today is Friday",""
+"passed","Fri Mar 10 12:56:34 GMT 2023","Fri Mar 10 12:56:35 GMT 2023","732","","Friday App API","","","","returns 200 for isFriday",""
+"passed","Fri Mar 10 12:56:34 GMT 2023","Fri Mar 10 12:56:34 GMT 2023","204","","Friday App","","","","displays how long should I wait for Friday",""
+"passed","Fri Mar 10 12:56:35 GMT 2023","Fri Mar 10 12:56:35 GMT 2023","213","","Friday App API","","","","returns 200 for minutesToFriday",""
+"failed","Fri Mar 10 12:56:28 GMT 2023","Fri Mar 10 12:56:34 GMT 2023","5902","","Friday App","","","","displays an info that today is not Friday",""
