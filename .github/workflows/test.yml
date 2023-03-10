@@ -1,0 +1,25 @@
+name: 'Test'
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment under tests
+
+jobs:
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Git checkout'
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Run Percy&Cypress
+        uses: cypress-io/github-action@v5
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        with:
+          working-directory: tests
+          command: npm run percy:${{ github.event.inputs.environment }}
