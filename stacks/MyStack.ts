@@ -9,8 +9,8 @@ export function MyStack({ stack }: StackContext) {
   // Create the HTTP API
   const api = new Api(stack, "Api", {
     routes: {
-      "GET /isFriday/{date}": "functions/isFriday.main",
-      "GET /minutesToFriday/{date}": "functions/minutesToFriday.main",
+      "GET /isSaturday/{date}": "functions/isSaturday.main",
+      "GET /minutesToSaturday/{date}": "functions/minutesToSaturday.main",
     },
   });
 

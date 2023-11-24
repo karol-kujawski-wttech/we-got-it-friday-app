@@ -9,7 +9,7 @@ export const main: APIGatewayProxyHandlerV2 = async (event) => {
   }
   return {
     statusCode: 200,
-    body: (new Date(Number(event.pathParameters?.date)).getDay() === 5).toString()
+    body: (new Date(Number(event.pathParameters?.date)).getDay() === 6).toString()
     // statusCode: 500,
     // body: undefined
   };

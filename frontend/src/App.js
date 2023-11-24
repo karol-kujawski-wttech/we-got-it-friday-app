@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Message = styled.div`
   font-size: 32px;
   color: purple;
-  text-align: right;
+  text-align: center;
 `;
 
 const StyledButton = styled.button`
@@ -37,47 +37,47 @@ const StyledButton = styled.button`
 `;
 
 export default function App() {
-  const [isFriday, setIsFriday] = useState(null);
-  const [minutesToFriday, setMinutesToFriday] = useState(null);
+  const [isSaturday, setisSaturday] = useState(null);
+  const [minutesToSaturday, setminutesToSaturday] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       const date = new Date().getTime();
-      fetch(process.env.REACT_APP_API_URL + `/isFriday/${date}`, {
+      fetch(process.env.REACT_APP_API_URL + `/isSaturday/${date}`, {
         method: "GET",
       })
         .then((response) => response.text())
-        .then(setIsFriday);
+        .then(setisSaturday);
     }
     fetchData();
   }, []);
 
   function onClick() {
     const date = new Date().getTime();
-    fetch(process.env.REACT_APP_API_URL + `/minutesToFriday/${date}`, {
+    fetch(process.env.REACT_APP_API_URL + `/minutesToSaturday/${date}`, {
       method: "GET",
     })
       .then((response) => response.text())
-      .then(setMinutesToFriday);
+      .then(setminutesToSaturday);
   }
 
   return (
     <div className="App">
-      {isFriday === 'true' ? (
-        <Message id="isFriday">Dzisiaj jest piątek! :D</Message>
+      {isSaturday === 'true' ? (
+        <Message id="isSaturday">Dzisiaj jest sobota! :D</Message>
       ) : (
         <Message></Message>
       )}
 
-      {isFriday === 'false' ? (
-        <Message id="isFriday">Piątek? To nie dzisiaj :(</Message>
+      {isSaturday === 'false' ? (
+        <Message id="isSaturday">Sobota? To nie dzisiaj :(</Message>
       ) : (
         <Message></Message>
       )}
 
       <StyledButton id="button" onClick={onClick} >Jak długo mam czekać!?</StyledButton>
-      {minutesToFriday ? (
-        <Message id="minutes">Zostało {minutesToFriday} minut do piątku.</Message>
+      {minutesToSaturday ? (
+        <Message id="minutes">Zostało {minutesToSaturday} minut do soboty.</Message>
       ) : null}
     </div>
   );
