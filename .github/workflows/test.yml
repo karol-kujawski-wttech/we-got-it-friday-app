@@ -23,36 +23,3 @@ jobs:
         with:
           working-directory: tests
           command: npm run percy:${{ github.event.inputs.environment }}
-
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Get Timestamp
-        id: timestamp
-        uses: nanzm/get-time-action@v1.1
-        if: always()
-        with:
-          timeZone: 2
-          format: 'YYYYMMDDHHmmss'
-
-      - name: Generate allure Report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: tests/build/allure-results
-          allure_history: allure-history
-          keep_reports: 20
-          github_run_num: ${{ steps.timestamp.outputs.time }}
-
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history

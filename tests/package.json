@@ -12,5 +12,10 @@
     "cypress-mochawesome-reporter": "^3.3.0",
     "mocha": "^10.2.0",
     "typescript": "4.8.4"
+  },
+  "scripts": { 
+    "percy:local": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/local.ts",
+    "percy:int": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/int.ts",
+    "percy:prod": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/prod.ts"
   }
 }

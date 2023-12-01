@@ -8,6 +8,7 @@ describe('Saturday App', () => {
       .visit('/')
       .get('#isSaturday')
       .should('have.text', 'Sobota? To nie dzisiaj :(')
+      .percySnapshot()
   });
 
   it('displays an info that today is Saturday', () => {
@@ -36,13 +37,13 @@ describe('Saturday App', () => {
 describe('Friday App API', () => {
 
   it('returns 200 for isSaturday', () => {
-    cy.request('GET', 'https://cidayq1sbj.execute-api.eu-central-1.amazonaws.com/isSaturday/1700830144570').then((response) => {
+    cy.request('GET', Cypress.env('apiUrl') + '/isSaturday/1700830144570').then((response) => {
       expect(response.status).eq(200);
     })
   });
 
   it('returns 200 for minutesToSaturday', () => {
-    cy.request('GET', 'https://cidayq1sbj.execute-api.eu-central-1.amazonaws.com/minutesToSaturday/1700830144570').then((response) => {
+    cy.request('GET', Cypress.env('apiUrl') + '/minutesToSaturday/1700830144570').then((response) => {
       expect(response.status).eq(200);
     })
   });
