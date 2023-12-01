@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Message = styled.div`
   font-size: 32px;
   color: purple;
-  text-align: center;
+  text-align: right;
 `;
 
 const StyledButton = styled.button`
