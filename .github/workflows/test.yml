@@ -14,7 +14,7 @@ jobs:
       - name: 'Git checkout'
         uses: actions/checkout@v3
         with:
-          ref: main
+          ref: vol-3-preparations
 
       - name: Run Percy&Cypress
         uses: cypress-io/github-action@v5
@@ -22,4 +22,5 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         with:
           working-directory: tests
-          command: npm run percy:${{ github.event.inputs.environment }}
+          # command: npm run percy:${{ github.event.inputs.environment }}
+          command: npm run cy:${{ github.event.inputs.environment }}

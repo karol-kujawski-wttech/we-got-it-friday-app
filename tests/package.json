@@ -16,6 +16,9 @@
   "scripts": { 
     "percy:local": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/local.ts",
     "percy:int": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/int.ts",
-    "percy:prod": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/prod.ts"
+    "percy:prod": "npx percy exec -- cypress run --browser chrome --e2e --config-file=cypress/config/prod.ts",
+    "cy:local": "npx cypress run --browser chrome --e2e --config-file=cypress/config/local.ts",
+    "cy:int": "npx cypress run --browser chrome --e2e --config-file=cypress/config/int.ts",
+    "cy:prod": "npx cypress run --browser chrome --e2e --config-file=cypress/config/prod.ts"
   }
 }
