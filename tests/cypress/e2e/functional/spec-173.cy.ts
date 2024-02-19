@@ -8,7 +8,7 @@ describe('Saturday App', () => {
       .visit('/')
       .get('#isSaturday')
       .should('have.text', 'Sobota? To nie dzisiaj :(')
-      .percySnapshot()
+      .percySnapshot('Screenshot - spec-173.cy.ts')
   });
 
   it('displays an info that today is Saturday', () => {
