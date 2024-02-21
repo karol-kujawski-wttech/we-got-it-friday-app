@@ -16,17 +16,20 @@ jobs:
         containers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - name: 'Git checkout'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: vol-3-preparations
-
       - name: Run Percy&Cypress
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         env:
-          SPLIT: ${{ strategy.job-total }}
-          SPLIT_INDEX: ${{ strategy.job-index }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           working-directory: tests
-          # command: npm run percy:${{ github.event.inputs.environment }}
-          command: npm run cy:${{ github.event.inputs.environment }}
+          browser: chrome
+          config-file: cypress/config/${{ inputs.environment }}.ts
+          component: false
+          record: true
+          parallel: true
+          publish-summary: false
