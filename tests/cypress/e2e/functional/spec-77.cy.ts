@@ -1,28 +1,28 @@
-describe('Saturday App', () => {
+describe('Friday App', () => {
   
-  it('displays an info that today is not Saturday', () => {
-    cy.intercept('GET', '/isSaturday/*', {
+  it('displays an info that today is not Friday', () => {
+    cy.intercept('GET', '/isFriday/*', {
       statusCode: 200,
       body: false
     })
       .visit('/')
-      .get('#isSaturday')
-      .should('have.text', 'Sobota? To nie dzisiaj :(')
+      .get('#isFriday')
+      .should('have.text', 'piątek? To nie dzisiaj :(')
       .percySnapshot('Screenshot - spec-77.cy.ts')
   });
 
-  it('displays an info that today is Saturday', () => {
-    cy.intercept('GET', '/isSaturday/*', {
+  it('displays an info that today is Friday', () => {
+    cy.intercept('GET', '/isFriday/*', {
       statusCode: 200,
       body: true
     })
       .visit('/')
-      .get('#isSaturday')
-      .should('have.text', 'Dzisiaj jest sobota! :D')
+      .get('#isFriday')
+      .should('have.text', 'Dzisiaj jest piątek! :D')
   });
 
-  it('displays how long should I wait for Saturday', () => {
-    cy.intercept('GET', '/minutesToSaturday/*', {
+  it('displays how long should I wait for Friday', () => {
+    cy.intercept('GET', '/minutesToFriday/*', {
       statusCode: 200,
       body: 4321
     })
@@ -30,6 +30,6 @@ describe('Saturday App', () => {
       .get('#button')
       .click()
       .get('#minutes')
-      .should('have.text', 'Zostało 4321 minut do soboty.')
+      .should('have.text', 'Zostało 4321 minut do piątku.')
   });
 });

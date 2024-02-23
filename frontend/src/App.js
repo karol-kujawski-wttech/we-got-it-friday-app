@@ -37,47 +37,47 @@ const StyledButton = styled.button`
 `;
 
 export default function App() {
-  const [isSaturday, setisSaturday] = useState(null);
-  const [minutesToSaturday, setminutesToSaturday] = useState(null);
+  const [isFriday, setisFriday] = useState(null);
+  const [minutesToFriday, setminutesToFriday] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       const date = new Date().getTime();
-      fetch(process.env.REACT_APP_API_URL + `/isSaturday/${date}`, {
+      fetch(process.env.REACT_APP_API_URL + `/isFriday/${date}`, {
         method: "GET",
       })
         .then((response) => response.text())
-        .then(setisSaturday);
+        .then(setisFriday);
     }
     fetchData();
   }, []);
 
   function onClick() {
     const date = new Date().getTime();
-    fetch(process.env.REACT_APP_API_URL + `/minutesToSaturday/${date}`, {
+    fetch(process.env.REACT_APP_API_URL + `/minutesToFriday/${date}`, {
       method: "GET",
     })
       .then((response) => response.text())
-      .then(setminutesToSaturday);
+      .then(setminutesToFriday);
   }
 
   return (
     <div className="App">
-      {isSaturday === 'true' ? (
-        <Message id="isSaturday">Dzisiaj jest sobota! :D</Message>
+      {isFriday === 'true' ? (
+        <Message id="isFriday">Dzisiaj jest piątek! :D</Message>
       ) : (
         <Message></Message>
       )}
 
-      {isSaturday === 'false' ? (
-        <Message id="isSaturday">Sobota? To nie dzisiaj :(</Message>
+      {isFriday === 'false' ? (
+        <Message id="isFriday">piątek? To nie dzisiaj :(</Message>
       ) : (
         <Message></Message>
       )}
 
       <StyledButton id="button" onClick={onClick} >Jak długo mam czekać!?</StyledButton>
-      {minutesToSaturday ? (
-        <Message id="minutes">Zostało {minutesToSaturday} minut do soboty.</Message>
+      {minutesToFriday ? (
+        <Message id="minutes">Zostało {minutesToFriday} minut do piątku.</Message>
       ) : null}
     </div>
   );

@@ -17,8 +17,7 @@ jobs:
     steps:
       - name: 'Git checkout'
         uses: actions/checkout@v4
-        with:
-          ref: vol-3-preparations
+
       - name: Run Percy&Cypress
         uses: cypress-io/github-action@v6
         env:
@@ -26,7 +25,7 @@ jobs:
           SPLIT: ${{ strategy.job-total }}
           SPLIT_INDEX: ${{ strategy.job-index }}
         with:
-          command-prefix: percy exec --parallel -- npx
+          # command-prefix: percy exec --parallel -- npx
           working-directory: tests
           browser: chrome
           config-file: cypress/config/${{ inputs.environment }}.ts
