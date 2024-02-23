@@ -10,16 +10,37 @@ jobs:
   test:
     name: 'Test'
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - name: 'Git checkout'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          ref: main
-
+          ref: vol-3-preparations
       - name: Run Percy&Cypress
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
         with:
+          command-prefix: percy exec --parallel -- npx
           working-directory: tests
-          command: npm run percy:${{ github.event.inputs.environment }}
+          browser: chrome
+          config-file: cypress/config/${{ inputs.environment }}.ts
+          component: false
+          publish-summary: false
+  finalize-percy-build:
+    name: 'Finalize Percy builds'
+    runs-on: ubuntu-latest
+    needs: [test]
+    if: always()
+    steps:
+      - name: 'Finalize Percy build'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: |
+          npm install @percy/cli
+          npx percy build:finalize
