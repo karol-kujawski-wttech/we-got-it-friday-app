@@ -1,5 +1,4 @@
 import { defineConfig } from 'cypress';
-import cypressSplit = require('cypress-split');
 
 export default defineConfig({
   e2e: {
@@ -7,7 +6,6 @@ export default defineConfig({
     baseUrl: "https://d3hp4tguev37fw.cloudfront.net",
     video: false,
     setupNodeEvents(on, config) {
-      cypressSplit(on, config);
       return config;
     },
     env: {
