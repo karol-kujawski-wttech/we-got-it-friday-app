@@ -21,12 +21,11 @@ jobs:
         uses: cypress-io/github-action@v6
         env:
           # PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
         with:
           # command-prefix: percy exec -- npx
           working-directory: tests
           browser: chrome
           config-file: cypress/config/${{ inputs.environment }}.ts
           component: false
-          record: true
-          parallel: true
