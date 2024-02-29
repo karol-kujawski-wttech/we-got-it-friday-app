@@ -20,11 +20,11 @@ jobs:
       - name: Run Percy&Cypress
         uses: cypress-io/github-action@v6
         env:
-          # PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
           SPLIT: ${{ strategy.job-total }}
           SPLIT_INDEX: ${{ strategy.job-index }}
         with:
-          # command-prefix: percy exec -- npx
+          command-prefix: percy exec -- npx
           working-directory: tests
           browser: chrome
           config-file: cypress/config/${{ inputs.environment }}.ts
