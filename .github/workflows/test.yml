@@ -10,6 +10,9 @@ jobs:
   test:
     name: 'Test'
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     steps:
       - name: 'Git checkout'
         uses: actions/checkout@v4
@@ -17,10 +20,13 @@ jobs:
       - name: Run Percy&Cypress
         uses: cypress-io/github-action@v6
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          # PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command-prefix: percy exec -- npx
+          # command-prefix: percy exec -- npx
           working-directory: tests
           browser: chrome
           config-file: cypress/config/${{ inputs.environment }}.ts
           component: false
+          record: true
+          parallel: true
