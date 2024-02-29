@@ -21,6 +21,7 @@ jobs:
         uses: cypress-io/github-action@v6
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_PARALLEL_TOTAL: ${{ strategy.job-total }}
           SPLIT: ${{ strategy.job-total }}
           SPLIT_INDEX: ${{ strategy.job-index }}
         with:
