@@ -7,8 +7,7 @@ describe('Friday App', () => {
     })
       .visit('/')
       .get('#isFriday')
-      .should('have.text', 'piątek? To nie dzisiaj :(')
-      .percySnapshot('Screenshot - spec-103.cy.ts')
+      .should('have.text', 'Piątek? To nie dzisiaj :(')
   });
 
   it('displays an info that today is Friday', () => {

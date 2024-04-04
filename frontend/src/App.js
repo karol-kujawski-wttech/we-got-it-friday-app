@@ -70,7 +70,7 @@ export default function App() {
       )}
 
       {isFriday === 'false' ? (
-        <Message id="isFriday">piątek? To nie dzisiaj :(</Message>
+        <Message id="isFriday">Piątek? To nie dzisiaj :(</Message>
       ) : (
         <Message></Message>
       )}
