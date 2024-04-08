@@ -4,6 +4,10 @@ function getminutesToFriday(dateInMilisecondsFromEpoch: string): number {
     // Get the current date
     const now = new Date(Number(dateInMilisecondsFromEpoch));
   
+    if(now.getDay() == 5){
+      return 0;
+    }
+
     // Calculate the number of days until the next Friday
     let daysUntilFriday = 5 - now.getDay();
     if (daysUntilFriday < 0) {

@@ -7,9 +7,6 @@ export default defineConfig({
     video: false,
     setupNodeEvents(on, config) {
       return config;
-    },
-    env: {
-      apiUrl: "https://cidayq1sbj.execute-api.eu-central-1.amazonaws.com"
     }
   }
 });
