@@ -1,0 +1,32 @@
+name: 'Delivery pipeline'
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: Env
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+    steps:
+     - name: 'Fake Deploy'
+       run: echo "Deploying to ${{ github.event.inputs.env }}"
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: 'Git checkout'
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      
+      - name: Run Percy&Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: tests
+          browser: chrome
+          config-file: cypress/config/${{ inputs.env }}.ts
+ 
