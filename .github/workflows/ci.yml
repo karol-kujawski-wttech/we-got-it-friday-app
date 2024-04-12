@@ -26,5 +26,5 @@ jobs:
         with:
           working-directory: tests
           browser: chrome
-          config-file: cypress/config/${{ inputs.environment }}.ts
+          config-file: cypress/config/${{ inputs.env }}.ts
           component: false
