@@ -4,6 +4,14 @@
 
 Built for webinars focused on test automation basics. This project serves as a practical example of implementing a fully functional automated testing framework.
 
+## 🎥 Webinars
+
+Watch our series of webinars to learn more:
+1. [We Got It - Test Automation Basics with Cypress & Percy](https://www.youtube.com/watch?v=Lq2PxJUfiGI)
+2. [We Got It - Test Automation in CI/CD with Github Actions](https://www.youtube.com/watch?v=sFnd6N8s3nA)
+3. [We Got It - Test Automation  & Parallelization](https://www.youtube.com/watch?v=dQi34F5EDXw&)
+
+
 ## ✨ Features
 
 - 🎨 Frontend built with React
@@ -32,14 +40,6 @@ This project demonstrates how to:
 - Configure continuous integration and deployment
 - Serve reports with Allure and Github Pages
 - Speed up execution time with parallelization
-
-
-## 🎥 Webinars
-
-Watch our series of webinars to learn more:
-1. [We Got It - Test Automation Basics with Cypress & Percy](https://www.youtube.com/watch?v=Lq2PxJUfiGI)
-2. [We Got It - Test Automation in CI/CD with Github Actions](https://www.youtube.com/watch?v=sFnd6N8s3nA)
-3. [We Got It - Test Automation  & Parallelization](https://www.youtube.com/watch?v=dQi34F5EDXw&)
 
 ---
 Built with ❤️ for test automation enthusiasts
