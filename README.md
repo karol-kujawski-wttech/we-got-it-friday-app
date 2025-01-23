@@ -26,11 +26,12 @@ my-sst-app/
 ## 🎯 Purpose
 
 This project demonstrates how to:
-- Set up a modern web application with React
-- Implement serverless architecture using SST
-- Create comprehensive automated tests
-- Configure continuous integration and deployment
+- Approach for testing on different levels (api, visual, e2e)
+- Deal with mocking api/services
 - Integrate visual regression testing
+- Configure continuous integration and deployment
+- Speed up execution time with parallelization
+
 
 ## 🎥 Webinars
 
