@@ -6,7 +6,7 @@ Built for webinars focused on test automation basics. This project serves as a p
 
 ## 🎥 Webinars
 
-Watch our series of webinars to learn more:
+Watch my series of webinars to learn more:
 1. [We Got It - Test Automation Basics with Cypress & Percy](https://www.youtube.com/watch?v=Lq2PxJUfiGI)
 2. [We Got It - Test Automation in CI/CD with Github Actions](https://www.youtube.com/watch?v=sFnd6N8s3nA)
 3. [We Got It - Test Automation  & Parallelization](https://www.youtube.com/watch?v=dQi34F5EDXw&)
@@ -23,7 +23,7 @@ Watch our series of webinars to learn more:
 ## 🏗️ Project Structure
 
 ```
-my-sst-app/
+we-got-it-friday-app/
 ├── .github/         # 🔄 Github Actions pipelines
 ├── frontend/        # 💻 React.js frontend application
 ├── stacks/          # 🏗️ SST infrastructure code
