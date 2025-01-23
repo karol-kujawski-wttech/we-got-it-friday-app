@@ -1,46 +1,43 @@
-# How to create a React.js app
+# 🎯 Friday App
 
-An example full-stack serverless React.js app created with SST.
+> 📅 An application answering the eternal question 'How long until Friday?'
 
-## Getting Started
+Built for webinars focused on test automation basics. This project serves as a practical example of implementing a fully functional automated testing framework.
 
-[**Read the tutorial**](https://sst.dev/examples/how-to-create-a-reactjs-app-with-serverless.html)
+## ✨ Features
 
-Install the example.
+- 🎨 Frontend built with React
+- ☁️ Serverless API built with SST, hosted on AWS
+- 🧪 End-to-end tests written in Cypress
+- 👀 Visual testing with Percy.io
+- 🚀 Automated CI/CD pipelines
 
-```bash
-$ npx create-sst@latest --template=examples/react-app
-# Or with Yarn
-$ yarn create sst --template=examples/react-app
+## 🏗️ Project Structure
+
+```
+my-sst-app/
+├── .github/         # 🔄 Github Actions pipelines
+├── frontend/        # 💻 React.js frontend application
+├── stacks/          # 🏗️ SST infrastructure code
+├── test/            # ✅ Test files
+└── sst.config.ts    # ⚙️ SST configuration
 ```
 
-## Commands
+## 🎯 Purpose
 
-### `npm run start`
+This project demonstrates how to:
+- Set up a modern web application with React
+- Implement serverless architecture using SST
+- Create comprehensive automated tests
+- Configure continuous integration and deployment
+- Integrate visual regression testing
 
-Starts the Live Lambda Development environment.
+## 🎥 Webinars
 
-### `npm run build`
+Watch our series of webinars to learn more:
+1. [We Got It - Test Automation Basics with Cypress & Percy](https://www.youtube.com/watch?v=Lq2PxJUfiGI)
+2. [We Got It - Test Automation in CI/CD with Github Actions](https://www.youtube.com/watch?v=sFnd6N8s3nA)
+3. [We Got It - Test Automation  & Parallelization](https://www.youtube.com/watch?v=dQi34F5EDXw&)
 
-Build your app and synthesize your stacks.
-
-### `npm run deploy [stack]`
-
-Deploy all your stacks to AWS. Or optionally deploy, a specific stack.
-
-### `npm run remove [stack]`
-
-Remove all your stacks and all of their resources from AWS. Or optionally removes, a specific stack.
-
-### `npm run test`
-
-Runs your tests using Jest. Takes all the [Jest CLI options](https://jestjs.io/docs/en/cli).
-
-## Documentation
-
-Learn more about the SST.
-
-- [Docs](https://docs.sst.dev/)
-- [@serverless-stack/cli](https://docs.sst.dev/packages/cli)
-- [@serverless-stack/resources](https://docs.sst.dev/packages/resources)
-
+---
+Built with ❤️ for test automation enthusiasts
