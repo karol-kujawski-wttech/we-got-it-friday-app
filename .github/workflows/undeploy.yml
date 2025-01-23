@@ -35,7 +35,7 @@ jobs:
         run: npx sst remove --stage ${{ github.event.inputs.env }}
 
       - name: Upload logs to artifactory
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: deploy-output
           path: out.json
