@@ -39,7 +39,7 @@ This project demonstrates how to:
 - Integrate visual regression testing
 - Configure continuous integration and deployment
 - Serve reports with Allure and Github Pages
-- Speed up execution time with parallelization
+- Speed up execution time with parallelization 
 
 ---
 Built with ❤️ for test automation enthusiasts
