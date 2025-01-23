@@ -30,6 +30,7 @@ This project demonstrates how to:
 - Deal with mocking api/services
 - Integrate visual regression testing
 - Configure continuous integration and deployment
+- Serve reports with Allure and Github Pages
 - Speed up execution time with parallelization
 
 
